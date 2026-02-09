@@ -1,11 +1,8 @@
 ---
-title: "Day One Prac"
-author: "Ben Frost"
+title: "Day One Practical:"
 format: html
 editor: visual
 ---
-
-## Day One Practical:
 
 ## Question 1
 

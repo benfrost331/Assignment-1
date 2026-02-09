@@ -4,14 +4,15 @@ project:
 book:
   title: "Assignment 1"
   author: "Ben Frost"
-  date: "2/9/2026"
+  date: "02/09/2026"
+  sidebar:
+    style: floating
+    collapse-level: 2
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
-
-bibliography: references.bib
+    - DayOnePractical.qmd
+    - DayThreePractical.qmd
+    - DayFourPractical.qmd
 
 format:
   html:
@@ -19,5 +20,6 @@ format:
   pdf:
     documentclass: scrreprt
 
-editor: visual
+execute: 
+  echo: true
 

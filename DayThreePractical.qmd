@@ -1,10 +1,8 @@
 ---
-title: "Day Three Prac"
+title: "Day Three Practical:"
 format: html
 editor: visual
 ---
-
-## Day Three Practical:
 
 ## Question 4:
 
@@ -47,8 +45,7 @@ lines(quantiles, upper_bound, col = "blue", lty = 2)
 
 Target to Check Against:
 
-```{r echo=FALSE}
-install.packages("car", type = "binary")
+```{r echo=FALSE, warning=FALSE, message=FALSE}
 library(car)
 
 qqPlot(t_dist_set, envelope = 0.95, ylim = c(-5, 5))
