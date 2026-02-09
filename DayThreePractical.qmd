@@ -1,0 +1,55 @@
+---
+title: "Day Three Prac"
+format: html
+editor: visual
+---
+
+## Day Three Practical:
+
+## Question 4:
+
+```{r}
+x <- seq(-2, 2, length.out = 500)
+y <- sin(x)
+
+plot(
+  x, y,
+  type = "l",
+  lwd = 2,
+  main = expression(paste("Plot of ", f(x), " = sin(x) for ", x %in% "[ -2, 2 ]")),
+  xlab = "x",
+  ylab = expression(f(x)),
+  xlim = c(-2, 2))
+```
+
+## Question 5:
+
+Result:
+
+```{r}
+t_dist_set = sort(rt(1000,1))
+theoretical_pop = sort(rnorm(1000000))
+quantiles = theoretical_pop[seq(1,1000000, length.out = 1000)] 
+
+envelope_matrix = matrix(NA, nrow = 1000, ncol = 1000)
+for(i in 1:1000) {
+  envelope_matrix[i, ] = sort(rnorm(1000))
+}
+
+lower_bound = apply(envelope_matrix, 2, quantile, probs = 0.025)
+upper_bound =  apply(envelope_matrix, 2, quantile, probs = 0.975)
+
+plot(quantiles, t_dist_set, ylim = c(-5, 5), xlim = c(-3, 3), xlab = "norm quantiles")
+abline(a = 0, b = 1, col = "blue")
+lines(quantiles, lower_bound, col = "blue", lty = 2)
+lines(quantiles, upper_bound, col = "blue", lty = 2)
+```
+
+Target to Check Against:
+
+```{r echo=FALSE}
+install.packages("car", type = "binary")
+library(car)
+
+qqPlot(t_dist_set, envelope = 0.95, ylim = c(-5, 5))
+```

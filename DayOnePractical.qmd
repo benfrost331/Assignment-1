@@ -1,0 +1,50 @@
+---
+title: "Day One Prac"
+author: "Ben Frost"
+format: html
+editor: visual
+---
+
+## Day One Practical:
+
+## Question 1
+
+```{r}
+db <- airquality
+db[!complete.cases(db), ]
+```
+
+## Question 2
+
+```{r}
+print("Temperature:")
+mean(db$Temp, na.rm = TRUE)
+sd(db$Temp, na.rm = TRUE)
+min(db$Temp, na.rm = TRUE)
+max(db$Temp, na.rm = TRUE)
+
+print("Ozone:")
+mean(db$Ozone, na.rm = TRUE)
+sd(db$Ozone, na.rm = TRUE)
+min(db$Ozone, na.rm = TRUE)
+max(db$Ozone, na.rm = TRUE)
+```
+
+## Question 3:
+
+```{r}
+cars <- cars
+Y <- cars$dist
+X <- cbind(1, cars$speed)
+
+beta_hat <- solve(t(X)%*%X)%*%(t(X)%*%Y)
+beta_hat
+```
+
+## Question 4:
+
+```{r}
+model <- lm(cars$dist ~ cars$speed)
+beta_hat2 <- model$coefficients
+beta_hat2
+```
