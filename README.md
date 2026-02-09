@@ -2,7 +2,7 @@ Statistical Computing: Assignment 1
 
 Ben Frost : FRSBEN005
 
-To Load Quarto Book HTML Website:
+To Load Quarto Book HTML Website for Peer Assessment:
 
 1) Download entire project and open it in RStudio.
 2) Open index.qmd
